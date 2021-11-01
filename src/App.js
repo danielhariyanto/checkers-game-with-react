@@ -5,7 +5,6 @@ import Board from './components/Board.js';
 import { Opponent } from './components/Opponent.js';
 import { Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 const browserHistory = createBrowserHistory();

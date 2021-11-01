@@ -1,13 +1,167 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.players>div {
+  display: inline-block;
+  border: 3px solid wheat;
+  font-size: 30px;
+  padding: 5px 10px;
+  min-width: 250px;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+}
+
+.game-board {
+  display: inline-block;
+  border: 10px solid burlywood;
+  position: relative;
+  transform: rotate(180deg);
+}
+
+.game-status {
+  display: block;
+  padding: 5px;
+  width: 55%;
+  max-width: 300px;
+  z-index: 3;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.time-travel {
+  max-width: 660px;
+  display: block;
+  margin: 0 auto;
+}
+
+.undo {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 0;
+  background-color: #fff;
+  box-shadow: none;
+  border: 3px solid burlywood;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.undo.disabled {
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+.board-col {
+  display: inline-block;
+  max-width: 80px;
+}
+
+.square {
+  background: no-repeat #fff;
+  border: none;
+  height: 80px;
+  width: 80px;
+  padding: 5px;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+.isActive {
+  background-color: black;
+}
+
+.square.movable.player1-move {
+  background-color: burlywood;
+}
+
+.square.movable.player2-move {
+  background-color: teal;
+}
+
+.square.player1, .square.player2, .square.movable {
+  cursor: pointer;
+}
+
+.square.black {
+  background-color: #000;
+}
+
+.square.player1 {
+  background-color: burlywood;
+  border-radius: 50%;
+  -webkit-transform: scale(0.80);
+  -moz-transform: scale(0.80);
+  transform: scale(0.80);
+}
+
+.square.player2 {
+  background-color: teal;
+  border-radius: 50%;
+  -webkit-transform: scale(0.80);
+  -moz-transform: scale(0.80);
+  transform: scale(0.80);
+}
+
+.square.player1.king {
+  background-color: burlywood;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px goldenrod;
+  -webkit-transform: scale(0.80);
+  -moz-transform: scale(0.80);
+  transform: scale(0.80);
+}
+
+.square.player2.king {
+  background-color: teal;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px goldenrod;
+  -webkit-transform: scale(0.80);
+  -moz-transform: scale(0.80);
+  transform: scale(0.80);
+}
+
+@media only screen and (max-width: 700px) {
+  .board-col {
+    max-width: 60px;
+  }
+  .square {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .board-col {
+    max-width: 50px;
+  }
+  .square {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .board-col {
+    max-width: 40px;
+  }
+  .square {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .board-col {
+    max-width: 35px;
+  }
+  .square {
+    height: 35px;
+    width: 35px;
+  }
 }

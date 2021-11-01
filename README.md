@@ -4,6 +4,9 @@
 
 This is a simple checkers game app, created in React. The game is single-player, played against different AI difficulties (easy, medium, hard).
 
+### Demo
+[https://danielhariyanto.github.io/checkers-react/](https://danielhariyanto.github.io/checkers-react/)
+
 ### Features
 - Implement basic game mechanics: taking turns, basic moves and jumps over the enemy checkers
 - Player should be able to drag-n-drop checkers using a mouse
